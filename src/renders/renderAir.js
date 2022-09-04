@@ -6,14 +6,14 @@ import {
 } from '../commonFunctions.js';
 
 export function renderAir(model) {
-  var ac = new AirConditioner(model);
+  const ac = new AirConditioner(model);
   myHouse.addConditioner(ac);
 
-  var acDiv = createElementWithAttributes('div', 'ac');
+  const acDiv = createElementWithAttributes('div', 'ac');
 
-  var label1 = createElementWithAttributes('label', null, 'Model');
+  const label1 = createElementWithAttributes('label', null, 'Model');
 
-  var model = createElementWithAttributes(
+  const model = createElementWithAttributes(
     'input',
     null,
     null,
@@ -25,38 +25,38 @@ export function renderAir(model) {
     ac.Model(model.value);
   });
 
-  var state = createElementWithAttributes('span', 'value', ac.getState());
+  const state = createElementWithAttributes('span', 'value', ac.getState());
 
-  var onBtn = createElementWithAttributes('button', null, 'ON', 'button');
+  const onBtn = createElementWithAttributes('button', null, 'ON', 'button');
   onBtn.addEventListener('click', function () {
     ac.on();
     changeClasses(state, 'off', 'on');
     state.textContent = ac.getState();
   });
-  var offBtn = createElementWithAttributes('button', null, 'OFF', 'button');
+  const offBtn = createElementWithAttributes('button', null, 'OFF', 'button');
   offBtn.addEventListener('click', function () {
     ac.off();
     changeClasses(state, 'on', 'off');
     return (state.textContent = ac.getState());
   });
 
-  var t = createElementWithAttributes('span', 'label', 'Temp:  ');
+  const t = createElementWithAttributes('span', 'label', 'Temp:  ');
 
-  var temp = createElementWithAttributes('span', 'value', ac._temp);
+  const temp = createElementWithAttributes('span', 'value', ac._temp);
 
-  var increaseTemp = createElementWithAttributes('button', null, '+', 'button');
+  const increaseTemp = createElementWithAttributes('button', null, '+', 'button');
   increaseTemp.addEventListener('click', function () {
     ac.changeTemp('+');
     return (temp.textContent = ac._temp);
   });
 
-  var decreaseTemp = createElementWithAttributes('button', null, '-', 'button');
+  const decreaseTemp = createElementWithAttributes('button', null, '-', 'button');
   decreaseTemp.addEventListener('click', function () {
     ac.changeTemp('-');
     return (temp.textContent = ac._temp);
   });
 
-  var delButton = createElementWithAttributes(
+  const delButton = createElementWithAttributes(
     'button',
     'del',
     'Delete',
@@ -66,8 +66,8 @@ export function renderAir(model) {
     document.body.removeChild(acDiv);
   });
 
-  var br1 = document.createElement('br');
-  var br2 = document.createElement('br');
+  const br1 = document.createElement('br');
+  const br2 = document.createElement('br');
 
   acDiv.appendChild(label1);
   acDiv.appendChild(model);

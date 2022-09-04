@@ -32,4 +32,4 @@ class Home {
   }
 }
 
-export let myHouse = new Home('Owner', 'City');
+export const myHouse = new Home('Owner', 'City');

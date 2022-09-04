@@ -7,15 +7,15 @@ import {
 } from '../commonFunctions.js';
 
 export function renderHouse(h) {
-  var fieldset = document.createElement('fieldset');
-  var legend = document.createElement('legend');
+  const fieldset = document.createElement('fieldset');
+  const legend = document.createElement('legend');
   legend.innerHTML = '<h2> Smart Home</h2>';
 
-  var owner = document.createElement('form');
+  const owner = document.createElement('form');
 
-  var ownerLabel = createElementWithAttributes('label', null, 'Owner');
+  const ownerLabel = createElementWithAttributes('label', null, 'Owner');
 
-  var ownerInput = createElementWithAttributes(
+  const ownerInput = createElementWithAttributes(
     'input',
     null,
     null,
@@ -27,7 +27,7 @@ export function renderHouse(h) {
     this.value = '';
   });
 
-  var ownerSubmit = createElementWithAttributes(
+  const ownerSubmit = createElementWithAttributes(
     'input',
     null,
     null,
@@ -44,11 +44,11 @@ export function renderHouse(h) {
   owner.appendChild(ownerInput);
   owner.appendChild(ownerSubmit);
 
-  var adress = document.createElement('form');
+  const adress = document.createElement('form');
 
-  var adressLabel = createElementWithAttributes('label', null, 'Adress');
+  const adressLabel = createElementWithAttributes('label', null, 'Adress');
 
-  var adressInput = createElementWithAttributes(
+  const adressInput = createElementWithAttributes(
     'input',
     null,
     null,
@@ -60,7 +60,7 @@ export function renderHouse(h) {
     this.value = '';
   });
 
-  var adressSubmit = createElementWithAttributes(
+  const adressSubmit = createElementWithAttributes(
     'input',
     null,
     null,
@@ -76,17 +76,17 @@ export function renderHouse(h) {
   adress.appendChild(adressInput);
   adress.appendChild(adressSubmit);
 
-  var addDevice = document.createElement('form');
+  const addDevice = document.createElement('form');
 
-  var addDeviceLabel = createElementWithAttributes(
+  const addDeviceLabel = createElementWithAttributes(
     'label',
     null,
     'Choose Device'
   );
 
-  var addDeviceInput = document.createElement('select');
+  const addDeviceInput = document.createElement('select');
 
-  var airOption = createElementWithAttributes(
+  const airOption = createElementWithAttributes(
     'option',
     null,
     'Air Conditioner',
@@ -95,7 +95,7 @@ export function renderHouse(h) {
     'Air Conditioner'
   );
 
-  var tvOption = createElementWithAttributes(
+  const tvOption = createElementWithAttributes(
     'option',
     null,
     'TV',
@@ -104,7 +104,7 @@ export function renderHouse(h) {
     'TV'
   );
 
-  var moOption = createElementWithAttributes(
+  const moOption = createElementWithAttributes(
     'option',
     null,
     'Microwave Owen',
@@ -113,7 +113,7 @@ export function renderHouse(h) {
     'Microwave Owen'
   );
 
-  var deviceSubmit = createElementWithAttributes(
+  const deviceSubmit = createElementWithAttributes(
     'input',
     null,
     null,
@@ -123,7 +123,7 @@ export function renderHouse(h) {
   );
   deviceSubmit.name = 'deviceSubmit';
   deviceSubmit.addEventListener('click', function () {
-    var model = prompt('Enter the device`s model', '');
+    const model = prompt('Enter the device`s model', '');
     if (model === null) {
       console.log('NO DEVICE');
       return;
@@ -152,7 +152,7 @@ export function renderHouse(h) {
   addDevice.appendChild(deviceSubmit);
 
   document.getElementById('home').appendChild(fieldset);
-  var field = document.getElementsByTagName('fieldset')[0];
+  const field = document.getElementsByTagName('fieldset')[0];
   field.appendChild(legend);
   field.appendChild(owner);
   field.appendChild(adress);

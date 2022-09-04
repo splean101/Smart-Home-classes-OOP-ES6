@@ -6,14 +6,14 @@ import {
 } from '../commonFunctions.js';
 
 export function renderMO(model) {
-  var mo = new MicrowaveOven(model);
+  const mo = new MicrowaveOven(model);
   myHouse.addMO(mo);
 
-  var moDiv = createElementWithAttributes('div', 'mo');
+  const moDiv = createElementWithAttributes('div', 'mo');
 
-  var label1 = createElementWithAttributes('label', null, 'Model');
+  const label1 = createElementWithAttributes('label', null, 'Model');
 
-  var model = createElementWithAttributes(
+  const model = createElementWithAttributes(
     'input',
     null,
     null,
@@ -25,40 +25,40 @@ export function renderMO(model) {
     mo.Model(model.value);
   });
 
-  var state = createElementWithAttributes('span', 'value', mo.getState());
+  const state = createElementWithAttributes('span', 'value', mo.getState());
 
-  var onBtn = createElementWithAttributes('button', null, 'ON', 'button');
+  const onBtn = createElementWithAttributes('button', null, 'ON', 'button');
   onBtn.addEventListener('click', function () {
     mo.on();
     changeClasses(state, 'off', 'on');
     return (state.textContent = mo.getState());
   });
 
-  var offBtn = createElementWithAttributes('button', null, 'OFF', 'button');
+  const offBtn = createElementWithAttributes('button', null, 'OFF', 'button');
   offBtn.addEventListener('click', function () {
     mo.off();
     changeClasses(state, 'on', 'off');
     return (state.textContent = mo.getState());
   });
 
-  var p = createElementWithAttributes('span', 'label', 'Power: ');
+  const p = createElementWithAttributes('span', 'label', 'Power: ');
   
-  var power = createElementWithAttributes('span', 'value', mo._power);
+  const power = createElementWithAttributes('span', 'value', mo._power);
   console.log(`mo power ${mo._power}`);
 
-  var increasePower = createElementWithAttributes('button', null, '+', 'button');
+  const increasePower = createElementWithAttributes('button', null, '+', 'button');
    increasePower.addEventListener('click', function () {
     mo.increasePower();
     return (power.textContent = mo._power);
   });
 
-  var decreasePower = createElementWithAttributes('button', null, '-', 'button');
+  const decreasePower = createElementWithAttributes('button', null, '-', 'button');
    decreasePower.addEventListener('click', function () {
     mo.decreasePower();
     return (power.textContent = mo._power);
   });
 
-  var delButton = createElementWithAttributes(
+  const delButton = createElementWithAttributes(
     'button',
     'del',
     'Delete',
@@ -68,8 +68,8 @@ export function renderMO(model) {
     document.body.removeChild(moDiv);
   });
 
-  var br1 = document.createElement('br');
-  var br2 = document.createElement('br');
+  const br1 = document.createElement('br');
+  const br2 = document.createElement('br');
 
   moDiv.appendChild(label1);
   moDiv.appendChild(model);
