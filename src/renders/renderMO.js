@@ -42,18 +42,27 @@ export function renderMO(model) {
   });
 
   const p = createElementWithAttributes('span', 'label', 'Power: ');
-  
-  const power = createElementWithAttributes('span', 'value', mo._power);
-  console.log(`mo power ${mo._power}`);
 
-  const increasePower = createElementWithAttributes('button', null, '+', 'button');
-   increasePower.addEventListener('click', function () {
+  const power = createElementWithAttributes('span', 'value', mo._power);
+
+  const increasePower = createElementWithAttributes(
+    'button',
+    null,
+    '+',
+    'button'
+  );
+  increasePower.addEventListener('click', function () {
     mo.increasePower();
     return (power.textContent = mo._power);
   });
 
-  const decreasePower = createElementWithAttributes('button', null, '-', 'button');
-   decreasePower.addEventListener('click', function () {
+  const decreasePower = createElementWithAttributes(
+    'button',
+    null,
+    '-',
+    'button'
+  );
+  decreasePower.addEventListener('click', function () {
     mo.decreasePower();
     return (power.textContent = mo._power);
   });
