@@ -1,25 +1,25 @@
-export function Device(model) {
-  this._model = model;
-  this._state = false;
-}
-
-Device.prototype.Model = function (model) {
-  if (!model) {
-    return this._model;
-  } else {
+export class Device {
+  constructor(model) {
     this._model = model;
+    this._state = false;
   }
-};
-Device.prototype.getState = function () {
-  return this._state ? "ON" : "OFF";
-};
-Device.prototype.setState = function (state) {
-  this._state = state;
-};
-
-Device.prototype.on = function () {
-  return (this._state = true);
-};
-Device.prototype.off = function () {
-  return (this._state = false);
-};
+  Model(model) {
+    if (!model) {
+      return this._model;
+    } else {
+      this._model = model;
+    }
+  }
+  getState() {
+    return this._state ? 'ON' : 'OFF';
+  }
+  setState(state) {
+    this._state = state;
+  }
+  on() {
+    return (this._state = true);
+  }
+  off() {
+    return (this._state = false);
+  }
+}

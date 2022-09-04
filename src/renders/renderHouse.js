@@ -123,7 +123,7 @@ export function renderHouse(h) {
   );
   deviceSubmit.name = 'deviceSubmit';
   deviceSubmit.addEventListener('click', function () {
-    const model = prompt('Enter the device`s model', '');
+    let model = prompt('Enter the device`s model', '');
     if (model === null) {
       console.log('NO DEVICE');
       return;

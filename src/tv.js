@@ -1,7 +1,8 @@
 import { Device } from './device.js';
 
-export class TV {
-  constructor(model) {
+export class TV extends Device {
+  constructor() {
+    super (model)
     this._volume = 0;
     this._chanel = 1;
     this._source = 'TV';

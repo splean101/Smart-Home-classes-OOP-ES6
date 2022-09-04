@@ -1,7 +1,8 @@
 import { Device } from './device.js';
 
-export class MicrowaveOven {
-  constructor(model) {
+export class MicrowaveOven extends Device {
+  constructor() {
+    super (model);
     this._power = '0';
   }
   increasePower() {

@@ -13,7 +13,7 @@ export function renderMO(model) {
 
   const label1 = createElementWithAttributes('label', null, 'Model');
 
-  const model = createElementWithAttributes(
+  model = createElementWithAttributes(
     'input',
     null,
     null,

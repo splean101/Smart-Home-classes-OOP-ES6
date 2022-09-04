@@ -15,8 +15,8 @@ function createElementWithAttributes(
   return element;
 }
 
-function changeClasses(element, removeClass, addedClass) {
-  element.classList.remove(removeClass);
+function changeClasses(element, removedClass, addedClass) {
+  element.classList.remove(removedClass);
   element.classList.add(addedClass);
 }
 export { createElementWithAttributes, changeClasses };

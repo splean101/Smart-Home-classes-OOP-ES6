@@ -1,7 +1,8 @@
 import { Device } from './device.js';
 
-export class AirConditioner {
-  constructor(model) {
+export class AirConditioner extends Device{
+  constructor() {
+    super (model);
     this._temp = 20;
   }
   changeTemp(option) {
