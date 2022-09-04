@@ -1,37 +1,35 @@
-export function Home(name, city) {
+//export
+class Home {
+  constructor(name, city) {
     this._owner = name; //prompt('Enter the name', '');
     this._adress = city; //prompt('Enter the city', '');
     this._air = [];
     this._tv = [];
     this._mo = [];
-};
-
-Home.prototype.Owner = function (owner) {
+  }
+  Owner(owner) {
     if (!owner) {
-        return this._owner;
+      return this._owner;
     } else {
-        this._owner = owner;
+      this._owner = owner;
     }
-};
-
-Home.prototype.Adress = function (adress) {
+  }
+  Adress(adress) {
     if (!adress) {
-        return this._adress;
+      return this._adress;
     } else {
-        this._adress = adress;
+      this._adress = adress;
     }
-};
-
-Home.prototype.addConditioner = function (cond) {
+  }
+  addConditioner(cond) {
     this._air.push(cond);
-};
-
-Home.prototype.addTV = function (tv) {
+  }
+  addTV(tv) {
     this._tv.push(tv);
-};
-
-Home.prototype.addMO = function (mo) {
+  }
+  addMO(mo) {
     this._mo.push(mo);
-};
+  }
+}
 
-export var myHouse = new Home('Owner', 'City');
+export let myHouse = new Home('Owner', 'City');

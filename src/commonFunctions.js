@@ -6,7 +6,7 @@ function createElementWithAttributes(
   placeholder,
   value
 ) {
-  var element = element ? document.createElement(element) : null;
+  let element = element ? document.createElement(element) : null;
   className ? element.classList.add(className) : null;
   textContent ? (element.textContent = textContent) : null;
   type ? (element.type = type) : null;
