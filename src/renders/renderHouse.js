@@ -23,9 +23,7 @@ export function renderHouse(h) {
     null,
     h.Owner()
   );
-  ownerInput.addEventListener('click', function () {
-    this.value = '';
-  });
+  ownerInput.addEventListener('click', () => (this.value = ''));
 
   const ownerSubmit = createElementWithAttributes(
     'input',
@@ -35,7 +33,7 @@ export function renderHouse(h) {
     null,
     'Change'
   );
-  ownerSubmit.addEventListener('click', function (event) {
+  ownerSubmit.addEventListener('click', (event) => {
     event.preventDefault();
     h.Owner(ownerInput.value);
   });
@@ -56,9 +54,7 @@ export function renderHouse(h) {
     null,
     h.Adress()
   );
-  adressInput.addEventListener('click', function () {
-    this.value = '';
-  });
+  adressInput.addEventListener('click', () => (this.value = ''));
 
   const adressSubmit = createElementWithAttributes(
     'input',
@@ -68,9 +64,7 @@ export function renderHouse(h) {
     null,
     'Change'
   );
-  adressSubmit.addEventListener('click', function () {
-    h.Adress(adressInput.value);
-  });
+  adressSubmit.addEventListener('click', () => h.Adress(adressInput.value));
 
   adress.appendChild(adressLabel);
   adress.appendChild(adressInput);
@@ -122,7 +116,7 @@ export function renderHouse(h) {
     '+ Add Device'
   );
   deviceSubmit.name = 'deviceSubmit';
-  deviceSubmit.addEventListener('click', function () {
+  deviceSubmit.addEventListener('click', () => {
     let model = prompt('Enter the device`s model', '');
     if (model === null) {
       console.log('NO DEVICE');

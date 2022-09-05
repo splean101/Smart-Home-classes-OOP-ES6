@@ -21,20 +21,18 @@ export function renderAir(model) {
     'unknown device',
     ac.Model()
   );
-  model.addEventListener('change', function () {
-    ac.Model(model.value);
-  });
+  model.addEventListener('change', () => ac.Model(model.value));
 
   const state = createElementWithAttributes('span', 'value', ac.getState());
 
   const onBtn = createElementWithAttributes('button', null, 'ON', 'button');
-  onBtn.addEventListener('click', function () {
+  onBtn.addEventListener('click', () => {
     ac.on();
     changeClasses(state, 'off', 'on');
     state.textContent = ac.getState();
   });
   const offBtn = createElementWithAttributes('button', null, 'OFF', 'button');
-  offBtn.addEventListener('click', function () {
+  offBtn.addEventListener('click', () => {
     ac.off();
     changeClasses(state, 'on', 'off');
     return (state.textContent = ac.getState());
@@ -44,14 +42,24 @@ export function renderAir(model) {
 
   const temp = createElementWithAttributes('span', 'value', ac._temp);
 
-  const increaseTemp = createElementWithAttributes('button', null, '+', 'button');
-  increaseTemp.addEventListener('click', function () {
+  const increaseTemp = createElementWithAttributes(
+    'button',
+    null,
+    '+',
+    'button'
+  );
+  increaseTemp.addEventListener('click', () => {
     ac.changeTemp('+');
     return (temp.textContent = ac._temp);
   });
 
-  const decreaseTemp = createElementWithAttributes('button', null, '-', 'button');
-  decreaseTemp.addEventListener('click', function () {
+  const decreaseTemp = createElementWithAttributes(
+    'button',
+    null,
+    '-',
+    'button'
+  );
+  decreaseTemp.addEventListener('click', () => {
     ac.changeTemp('-');
     return (temp.textContent = ac._temp);
   });
@@ -62,9 +70,7 @@ export function renderAir(model) {
     'Delete',
     'button'
   );
-  delButton.addEventListener('click', function () {
-    document.body.removeChild(acDiv);
-  });
+  delButton.addEventListener('click', () => document.body.removeChild(acDiv));
 
   const br1 = document.createElement('br');
   const br2 = document.createElement('br');

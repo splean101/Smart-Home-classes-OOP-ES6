@@ -20,14 +20,12 @@ export function renderTV(model) {
     'unknown device',
     tv.Model()
   );
-  model.addEventListener('change', function () {
-    tv.Model(model.value);
-  });
+  model.addEventListener('change', () => tv.Model(model.value));
 
   const state = createElementWithAttributes('span', 'value', tv.getState());
 
   const onBtn = createElementWithAttributes('button', null, 'ON', 'button');
-  onBtn.addEventListener('click', function () {
+  onBtn.addEventListener('click', () => {
     tv.on();
     changeClasses(state, 'off', 'on');
     return (state.textContent = tv.getState());
@@ -35,7 +33,7 @@ export function renderTV(model) {
   const offBtn = document.createElement('button');
   offBtn.type = 'button';
   offBtn.textContent = 'OFF';
-  offBtn.addEventListener('click', function () {
+  offBtn.addEventListener('click', () => {
     tv.off();
     changeClasses(state, 'on', 'off');
     return (state.textContent = tv.getState());
@@ -48,14 +46,14 @@ export function renderTV(model) {
   range.value = 0;
   range.step = 5;
   const volumeValue = createElementWithAttributes('span', null, '0');
-  range.addEventListener('input', function () {
+  range.addEventListener('input', () => {
     const vol = range.value;
     tv.changeVolume(vol);
     volumeValue.textContent = tv._volume;
   });
 
   const muteButton = createElementWithAttributes('button', null, 'Mute');
-  muteButton.addEventListener('click', function () {
+  muteButton.addEventListener('click', () => {
     tv.muteVolume();
     volumeValue.textContent = tv._volume;
     range.value = 0;
@@ -78,7 +76,7 @@ export function renderTV(model) {
     '^',
     'button'
   );
-  increaseChanel.addEventListener('click', function () {
+  increaseChanel.addEventListener('click', () => {
     tv.changeChanel('+');
     chanel.value = tv._chanel;
   });
@@ -88,7 +86,7 @@ export function renderTV(model) {
     'v',
     'button'
   );
-  decreaseChanel.addEventListener('click', function () {
+  decreaseChanel.addEventListener('click', () => {
     tv.changeChanel('-');
     chanel.value = tv._chanel;
   });
@@ -99,9 +97,7 @@ export function renderTV(model) {
     'Delete',
     'button'
   );
-  delButton.addEventListener('click', function () {
-    document.body.removeChild(tvDiv);
-  });
+  delButton.addEventListener('click', () => document.body.removeChild(tvDiv));
 
   const volumeWrapper = document.createElement('div');
   volumeWrapper.classList.add('half-left');
