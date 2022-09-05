@@ -8,18 +8,10 @@ class Home {
     this._mo = [];
   }
   Owner(owner) {
-    if (!owner) {
-      return this._owner;
-    } else {
-      this._owner = owner;
-    }
+    !owner ? this._owner : (this._owner = owner);
   }
   Adress(adress) {
-    if (!adress) {
-      return this._adress;
-    } else {
-      this._adress = adress;
-    }
+    !adress ? this._adress : (this._adress = adress);
   }
   addConditioner(cond) {
     this._air.push(cond);
